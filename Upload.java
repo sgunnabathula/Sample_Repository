@@ -41,6 +41,9 @@ public class Upload extends HttpServlet {
         java.util.Date today = new java.util.Date();
         return new java.sql.Date(today.getTime());
     }
+     private static java.sql.Date getCurrentDate() {
+        java.util.Date today = new java.util.Date();
+        return new java.sql.Date(today.getTime());
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
