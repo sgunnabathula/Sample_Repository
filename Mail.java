@@ -59,3 +59,25 @@ public class Mail {
     }
 
 }
+try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(userid));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(to));
+            message.setSubject("Secret key ");
+            message.setText(msg);
+
+            Transport.send(message);
+
+            System.out.println("Done");
+            return true;
+
+        } catch (MessagingException e) {
+            System.out.println(e);
+            e.printStackTrace();
+            return false;
+            // throw new RuntimeException(e);
+        }
+    }
+
+
